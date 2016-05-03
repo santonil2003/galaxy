@@ -20,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void saveWord(View v){
         // build intent to start another activity
+
+        /**
+         * passing data between activities
+         */
         Intent intent = new Intent(this, ViewActivity.class);
 
         //get object from main layout
@@ -32,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(MEANING, meaning.getText().toString());
         intent.putExtra(SENTENCE, sentence.getText().toString());
 
+
+        intent.putExtra("var_name","Saved!");
+
+        // start new activity
         startActivity(intent);
     }
 }
