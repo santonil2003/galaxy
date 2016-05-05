@@ -6,6 +6,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class ListActivity extends AppCompatActivity {
 
@@ -25,6 +27,18 @@ public class ListActivity extends AppCompatActivity {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
+
+        String[] items = {"Android","IPhone","WindowsMobile","Blackberry","WebOS","Ubuntu","Windows7","Max OS X", "Elemetary", "ChromeOS", "BadaOS"};
+
+
+        ArrayAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, items);
+        ListView listView = (ListView) findViewById(R.id.listView);
+        listView.setAdapter(adapter);
+
+
     }
 
 }
